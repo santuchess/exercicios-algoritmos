@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="ipt_nomeRua" />
+    <input type="text" id="ipt_numeroCasa" />
+    <button onclick="exibir()">Onde eu moro</button>
+  </body>
+</html>
+<script>
+  function exibir() {
+    alert(
+      "Seu logradouro é " +
+        ipt_nomeRua.value +
+        "\n O número do seu logradouro é " +
+        ipt_numeroCasa.value,
+    );
+  }
+</script>
+
+<!-- ====================================================================
+     EXPLICAÇÃO DOS CONCEITOS APLICADOS
+     ====================================================================
+
+     1. <input type="text" id="...">
+        - Dois campos de texto: um para o nome da rua e outro para o número da casa.
+
+     2. <button onclick="funcao()">
+        - Botão que, ao ser clicado, chama a função exibir().
+
+     3. alert(...)
+        - Exibe uma janela pop-up no navegador com o texto informado entre parênteses.
+
+     4. CONCATENAÇÃO DE STRINGS (+)
+        - O operador + une os textos fixos (ex.: "Seu logradouro é ") com os valores digitados nos
+          inputs (ipt_nomeRua.value e ipt_numeroCasa.value), formando a mensagem final.
+
+     5. "\n" (quebra de linha em texto/string)
+        - Diferente do <br> usado em HTML, dentro de uma string do JavaScript o \n representa uma quebra
+          de linha, exibida no alert como uma nova linha de texto.
+
+     6. .value
+        - Propriedade que lê o valor (texto) atualmente digitado dentro do campo de input.
+
+     RESUMO:
+     - Este exercício lê o nome da rua e o número da casa digitados pelo usuário e exibe as duas
+       informações juntas em um alert, usando concatenação de strings (+) e a quebra de linha \n
+       para organizar o texto em duas linhas.
+     ==================================================================== -->

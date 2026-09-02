@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="ipt_nomeRua" />
+    <input type="text" id="ipt_numeroCasa" />
+    <button onclick="exibir()">Onde eu moro</button>
+  </body>
+</html>
+<script>
+  function exibir() {
+    alert(
+      "Seu logradouro é " +
+        ipt_nomeRua.value +
+        "\n O número do seu logradouro é " +
+        ipt_numeroCasa.value,
+    );
+  }
+</script>

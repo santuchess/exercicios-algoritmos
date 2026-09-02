@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Qual é o seu nome?</span>
+    <input type="text" id="id_nome"><br>
+    <span>Qual nota tirou na continuada?</span>
+    <input type="text" id="id_nota1"><br>
+    <span>Qual nota tirou na semestral?</span>
+    <input type="text" id="id_nota2"><br>
+    <button onclick="mostrar()">Calcular media</button>
+    <div id="id_media"></div>
+</body>
+</html>
+<script>
+    function mostrar() {
+        let n1 = Number(id_nota1.value)
+        let n2 = Number(id_nota2.value)
+        let media = (n1 * 0.4) + (n2 * 0.6)
+        let nome = (id_nome.value)
+        let mensagem = `A média de ${nome} será de ${(media).toFixed(2)}`
+
+        id_media.innerHTML = mensagem;
+    }
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Quantidade de votos do candidato A</span>
+    <input type="text" id="id_cand1"><br>
+    <span>Quantidade de votos do candidato B</span>
+    <input type="text" id="id_cand2"><br>
+    <span>Quantidade de votos brancos</span>
+    <input type="text" id="id_cand3"><br>
+    <span>Quantidade de votos nulos</span>
+    <input type="text" id="id_cand4"><br>
+    <button onclick="resultado()">Resultado da eleição</button>
+    <div id="id_mensagem"></div>
+</body>
+</html>
+<script>
+    function resultado() {
+        let n1 = Number(id_cand1.value)
+        let n2 = Number(id_cand2.value)
+        let n3 = Number(id_cand3.value)
+        let n4 = Number(id_cand4.value)
+        let invalidos = n3 + n4
+        let total = n1+ n2 + n3 + n4
+        let cand1 = n1 / total * 100
+        let cand2 = n2 / total * 100
+        let cand3 = invalidos / total * 100
+        let mensagem = 
+        `Total de votos: ${total}<br>
+        Candidato A: ${cand1.toFixed(0)}% (${n1} Votos)<br>
+        Candidato B: ${cand2.toFixed(0)}% (${n2} Votos)<br>
+        Invalidos: ${cand3.toFixed(0)}% (${invalidos} Votos)`
+        id_mensagem.innerHTML = mensagem;
+        }
+</script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Coloque o valor a ser depositado:</span>
+    <input type="text" id="id_deposito"><br>
+    <span>Valor para ser retirado:</span>
+    <input type="text" id="id_retirar"><br>
+    <button onclick="depositar()">Depositar</button>
+    <button onclick="retirar()">Retirar</button>
+    <div id="id_exibir"></div>
+</body>
+</html>
+<script>
+    let contador = 0;
+    function depositar() {
+        let deposito = Number(id_deposito.value)
+        contador = contador + deposito
+        id_exibir.innerHTML = `Depósito de R$${id_deposito.value} efetuado! Saldo atual: R$${contador}`
+    }
+    function retirar() {
+        let retirar = Number(id_retirar.value)
+        contador = contador - retirar
+        id_exibir.innerHTML = `Retirada de R$${id_retirar.value} efetuada! Saldo atual: R$${contador}`
+    }
+</script>

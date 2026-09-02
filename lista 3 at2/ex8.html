@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Qual é o valor da passagem de ônibus?</span>
+    <input type="text" id="id_vlrpassagem"><br>
+    <span>Quantidades de viagens no mês</span>
+    <input type="text" id="id_viagens"><br>
+    <span>Qual é a distancia do trabalho até a sua casa?</span>
+    <input type="text" id="id_distancia"><br>
+    <button onclick="calcular()">Calcular VT</button>
+    <div id="id_mensagem"></div>
+</body>
+</html>
+<script>
+    function calcular() {
+        let passagem = Number(id_vlrpassagem.value) //5 reais
+        let viagens = Number(id_viagens.value) //50 viagens
+        let distancia = Number(id_distancia.value) // 10km distancia
+
+        let viagemUber = viagens * 0.10
+        let viagemOnibus = viagens - viagemUber
+
+        let gastoOnibus = viagemOnibus * passagem
+        let precoUmaViagem = distancia * 0.75
+
+        let gastoUber = precoUmaViagem * viagemUber
+        let resultado = gastoOnibus + gastoUber;
+        
+        let mensagem = `Você vai gastar R$${resultado} por mês com transporte`
+
+        id_mensagem.innerHTML = mensagem;
+    }
+</script>

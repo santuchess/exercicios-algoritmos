@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Coloque um numero</span>
+    <input type="text" id="id_num1"><br>
+    <span>Coloque outro numero</span>
+    <input type="text" id="id_num2"><br>
+    <button onclick="quociente()">QUOCIENTE</button>
+    <button onclick="resto()">RESTO</button>
+    <button onclick="completo()">COMPLETO</button>
+    <div id="id_mostrar"></div>
+</body>
+</html>
+<script>
+    function quociente() {
+        let n1 = Number(id_num1.value)
+        let n2 = Number(id_num2.value)
+        let resultado = (n1 / n2).toFixed(3)
+        let mensagem = `A divisão de ${id_num1.value} por ${id_num2.value} é 
+        ${resultado}, sendo que ${id_num1.value} é o primeiro numero recebido, 
+        ${id_num2.value} é o segundo e
+        ${resultado} é o quociente da divisão`
+
+        id_mostrar.innerHTML = mensagem;
+    }
+    function resto() {
+        let n1 = Number(id_num1.value)
+        let n2 = Number(id_num2.value)
+        let resultado = n1 % n2
+        let mensagem = `O resto da divisão de ${id_num1.value} por 
+        ${id_num2.value} é: ${resultado}, sendo que ${id_num1.value} 
+        é o primeiro número recebido, ${id_num2.value} é o segundo e 
+        ${resultado} é o resto da divisão`
+
+        id_mostrar.innerHTML = mensagem;
+    }
+    function completo() {
+        let n1 = Number(id_num1.value)
+        let n2 = Number(id_num2.value)
+        let resultado = n1 / n2
+        let restoRes = n1 % n2
+        let mensagem = `A divisão de ${id_num1.value} por ${id_num2.value} é: ${resultado} e o resto dessa divisão 
+        é: ${restoRes} , sendo que ${id_num1.value} é o primeiro número recebido, ${id_num2.value} é o segundo, 
+        ${resultado} é o quociente da divisão e ${restoRes} é o resto dessa divisão`
+
+        id_mostrar.innerHTML = mensagem;
+    }
+
+</script>
+
+
+

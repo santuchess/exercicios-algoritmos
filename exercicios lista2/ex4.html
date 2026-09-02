@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Nome da Rua/Avenida/Vila: </span>
+    <input type="text" id="input_nome" value=""><br>
+    <span>Número da casa: </span>
+    <input type="text" id="input_numero" value=""><br>
+    <button onclick="mostrar()">Onde eu moro</button>
+</body>
+</html>
+<script>
+    function mostrar() {
+        alert('Seu logradouro é ' + input_nome.value)
+        alert('O número do seu logradouro é ' + input_numero.value)
+    }
+</script>

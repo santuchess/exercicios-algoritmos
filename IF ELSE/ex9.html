@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de peso no elevador</title>
+</head>
+<body>
+    <span>Quantidade de homens</span>
+    <input type="text" id="id_homens"><br>
+    <span>Quantidade de mulheres</span>
+    <input type="text" id="id_mulher"><br>
+    <button onclick="calcular()">Analisar peso</button>
+    <div id="id_exibir"></div>
+</body>
+</html>
+<script>
+    function calcular() {
+        let homem = Number(id_homens.value)// 3x80
+        let mulher = Number(id_mulher.value)// 3x60
+
+        let pesoMulher = homem * 80
+        let pesoHomem = mulher * 60
+
+        let resultado = pesoMulher + pesoHomem
+
+        if(resultado < 800) {
+            id_exibir.innerHTML = `Este elevador suporta 800 Kg e o peso estimado desta lotação é de ${resultado}kg`
+        } else{
+            id_exibir.innerHTML = `<div style="color: blue">Será necessário que alguém desça para que o elevador se movimente</div>`
+        }
+    }
+</script>

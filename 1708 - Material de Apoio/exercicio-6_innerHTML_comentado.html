@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="pare()">Pare</button>
+    <button onclick="pense()">Pense</button>
+    <button onclick="siga()">Siga</button>
+
+    <div id="div_exibir">Olá pessoal</div>
+  </body>
+</html>
+<script>
+  function pare() {
+    // alert("Pare e aguarde");
+    div_exibir.innerHTML = "Pare e <br> aguarde";
+  }
+
+  function pense() {
+    // alert("Pense se pode seguir ou se deve parar!");
+    div_exibir.innerHTML = "Pense se pode seguir ou se deve parar!";
+  }
+
+  function siga() {
+    // alert("Pode seguir adiante");
+    div_exibir.innerHTML = "Pode seguir adiante";
+  }
+</script>
+
+<!-- ====================================================================
+     EXPLICAÇÃO DOS CONCEITOS APLICADOS
+     ====================================================================
+
+     1. <button onclick="funcao()">
+        - Mesmos três botões do exercício anterior (Pare, Pense, Siga), cada um chamando sua função.
+
+     2. <div id="div_exibir">Olá pessoal</div>
+        - Elemento que já nasce com um texto padrão ("Olá pessoal"), substituído assim que algum
+          botão é clicado.
+
+     3. COMENTÁRIOS NO CÓDIGO (// alert(...))
+        - As linhas com alert() foram mantidas comentadas dentro das funções para mostrar a evolução
+          do exercício anterior (exercicio-6_comentado.html): em vez de usar alert() (janela pop-up),
+          agora o resultado é escrito diretamente na página com innerHTML.
+        - Comentários com // são ignorados pelo JavaScript, servindo apenas de anotação/registro para
+          quem está lendo o código.
+
+     4. innerHTML
+        - Substitui o conteúdo interno da div pelo texto informado, atualizando o que é exibido na
+          página sem precisar de uma janela pop-up.
+
+     5. <br> DENTRO DE innerHTML
+        - Note que, na função pare(), o texto atribuído a innerHTML contém a tag <br> ("Pare e <br> aguarde").
+        - Como innerHTML interpreta o conteúdo como HTML (e não como texto puro), o <br> funciona
+          normalmente e quebra a linha dentro da div.
+
+     RESUMO:
+     - Este exercício reaproveita a lógica do exercicio-6 (botões Pare/Pense/Siga), mas troca o alert()
+       por innerHTML, exibindo as mensagens diretamente dentro de uma div da página — inclusive
+       demonstrando que tags HTML (como <br>) funcionam quando inseridas via innerHTML.
+     ==================================================================== -->

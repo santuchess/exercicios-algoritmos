@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmolândia</title>
+</head>
+<body>
+    <span>Quantidade KWh por mês:</span>
+    <input type="text" id="id_qtdkw"><br>
+    <button onclick="mostrar()">calcular</button>
+    <div id="id_exibir"></div>
+</body>
+</html>
+<script>
+    function mostrar() {
+        let kwh = Number(id_qtdkw.value)
+        let total = kwh * 0.85
+        let desconto = total * 0.1
+        let descTotal = total - desconto
+        if(id_qtdkw.value < 100){
+            alert(`você deve pagar ${descTotal}`) 
+        } else {
+            alert(`você deve pagar ${total}`)
+        }
+    }
+</script>

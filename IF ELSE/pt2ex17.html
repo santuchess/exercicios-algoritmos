@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <span>Informa o primeiro numero:</span>
+    <input type="text" id="id_num1" /><br />
+    <span>Informa o segundo numero:</span>
+    <input type="text" id="id_num2" /><br />
+    <button onclick="resultado()">Testar</button>
+    <div id="id_exibir"></div>
+  </body>
+</html>
+<script>
+  function resultado() {
+    let num1 = Number(id_num1.value);
+    let num2 = Number(id_num2.value);
+
+    let resultado = num1 + num2;
+    if (resultado % 2 == 0) {
+      id_exibir.innerHTML = `<img src="https://img.magnific.com/psd-gratuitas/verifique-o-simbolo-isolado_23-2150500363.jpg?semt=ais_hybrid&w=740&q=80" alt="" />`;
+    } else {
+      id_exibir.innerHTML = `<img src="https://img.magnific.com/vetores-gratis/simbolo-de-botao-de-alerta-de-erro_24877-83749.jpg?semt=ais_hybrid&w=740&q=80" alt="">`;
+    }
+  }
+</script>
+<img src="" alt="" />

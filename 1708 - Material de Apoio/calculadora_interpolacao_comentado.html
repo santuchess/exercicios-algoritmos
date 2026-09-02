@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora legal</title>
+  </head>
+  <body>
+    <input type="text" id="ipt_numero1" />
+    <input type="text" id="ipt_numero2" />
+    <button onclick="multiplicar()">Multiplicar</button>
+    <button onclick="dividir()">Dividir</button>
+    <button onclick="subtrair()">Subtrair</button>
+    <button onclick="somar()">Somar</button>
+    <div id="div_exibir"></div>
+  </body>
+</html>
+<script>
+  function multiplicar() {
+    div_exibir.innerHTML = `O resultado da multiplacação é ${Number(ipt_numero1.value) * Number(ipt_numero2.value)}`;
+  }
+
+  function dividir() {
+    div_exibir.innerHTML = `O resultado da divisão é: " ${Number(ipt_numero1.value) / Number(ipt_numero2.value)} `;
+  }
+
+  function subtrair() {
+    div_exibir.innerHTML = `O resultado da subtração é: ${Number(ipt_numero1.value) - Number(ipt_numero2.value)}`;
+  }
+
+  function somar() {
+    div_exibir.innerHTML = `O resultado da soma é: ${Number(ipt_numero1.value) + Number(ipt_numero2.value)} `;
+  }
+</script>
+
+<!-- ====================================================================
+     EXPLICAÇÃO DOS CONCEITOS APLICADOS
+     ====================================================================
+
+     1. <input type="text" id="...">
+        - Dois campos de texto para o usuário digitar os números da conta.
+        - O valor digitado sempre chega como TEXTO (string), por isso é convertido com Number() antes de calcular.
+
+     2. <button onclick="funcao()">
+        - Cada botão dispara a função correspondente à operação matemática desejada.
+
+     3. <div id="div_exibir">
+        - Elemento vazio que serve apenas para exibir o resultado calculado.
+
+     4. innerHTML
+        - Substitui o conteúdo interno da div pelo texto/resultado gerado na função.
+
+     5. TEMPLATE STRING / INTERPOLAÇÃO (` `  e  ${ })
+        - Ao usar crases (`` ` ``) em vez de aspas simples/duplas, é possível criar uma "template string".
+        - Dentro dela, tudo que está entre ${ } é código JavaScript executado e o resultado é inserido
+          diretamente no texto — isso é chamado de INTERPOLAÇÃO.
+        - Ex.: `O resultado é ${2 + 3}` → "O resultado é 5"
+        - É uma alternativa mais legível à concatenação com o operador + (comparar com o arquivo
+          calculadora_concatenacao_comentado.html, que resolve o mesmo problema usando +).
+
+     6. Number(...)
+        - Converte o texto do input para número antes de realizar a conta, garantindo que a operação
+          matemática (dentro do ${ }) seja feita corretamente e não apenas concatenada como texto.
+
+     RESUMO:
+     - Esta calculadora é equivalente à versão por concatenação, mas troca o operador + por template
+       strings (crases + ${ }), que interpolam o resultado do cálculo diretamente dentro do texto,
+       deixando o código mais limpo e fácil de ler.
+     ==================================================================== -->

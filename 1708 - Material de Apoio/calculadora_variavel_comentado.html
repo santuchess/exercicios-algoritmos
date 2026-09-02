@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora legal</title>
+  </head>
+  <body>
+    <input type="text" id="ipt_numero1" />
+    <input type="text" id="ipt_numero2" />
+    <button onclick="multiplicar()">Multiplicar</button>
+    <button onclick="dividir()">Dividir</button>
+    <button onclick="subtrair()">Subtrair</button>
+    <button onclick="somar()">Somar</button>
+    <div id="div_exibir"></div>
+  </body>
+</html>
+<script>
+  function multiplicar() {
+    //IMPORTANTE: Sempre converta o valor para número quando for realizar um calculo
+
+    let n1 = Number(ipt_numero1.value);
+    let n2 = Number(ipt_numero2.value);
+    let resultado = n1 * n2;
+    let mensagem = `O resultado da multiplacação é ${resultado}`;
+
+    div_exibir.innerHTML = mensagem;
+  }
+
+  function dividir() {
+    //IMPORTANTE: Sempre converta o valor para número quando for realizar um calculo
+
+    let n1 = Number(ipt_numero1.value);
+    let n2 = Number(ipt_numero2.value);
+    let resultado = n1 / n2;
+    let mensagem = `O resultado da divisão é ${resultado}`;
+
+    div_exibir.innerHTML = mensagem;
+  }
+
+  function subtrair() {
+    //IMPORTANTE: Sempre converta o valor para número quando for realizar um calculo
+
+    let n1 = Number(ipt_numero1.value);
+    let n2 = Number(ipt_numero2.value);
+    let resultado = n1 - n2;
+    let mensagem = `O resultado da subtração é ${resultado}`;
+
+    div_exibir.innerHTML = mensagem;
+  }
+
+  function somar() {
+    //IMPORTANTE: Sempre converta o valor para número quando for realizar um calculo
+
+    let n1 = Number(ipt_numero1.value);
+    let n2 = Number(ipt_numero2.value);
+    let resultado = n1 + n2;
+    let mensagem = `O resultado da soma é ${resultado}`;
+
+    div_exibir.innerHTML = mensagem;
+  }
+</script>
+
+<!-- ====================================================================
+     EXPLICAÇÃO DOS CONCEITOS APLICADOS
+     ====================================================================
+
+     1. <input type="text" id="...">
+        - Campos onde o usuário digita os dois números da operação (o valor sempre chega como texto).
+
+     2. <button onclick="funcao()">
+        - Cada botão executa a função da operação matemática correspondente.
+
+     3. <div id="div_exibir">
+        - Espaço reservado para exibir a mensagem com o resultado final.
+
+     4. let (declaração de VARIÁVEIS)
+        - let cria uma variável, um "espaço na memória" com nome, que guarda um valor para ser usado depois.
+        - Diferente dos exemplos anteriores (concatenação/interpolação), aqui o cálculo é dividido em etapas
+          guardadas em variáveis, o que deixa o código mais organizado e fácil de entender/depurar.
+
+     5. Number(...)
+        - Converte o texto digitado no input para um valor numérico.
+        - O comentário "//IMPORTANTE" reforça a regra: sem essa conversão, operações como soma (+)
+          podem concatenar os textos em vez de somar os números.
+
+     6. ETAPAS DA FUNÇÃO (n1, n2, resultado, mensagem)
+        - n1 e n2: guardam os dois números já convertidos.
+        - resultado: guarda o valor calculado (n1 * n2, n1 / n2, n1 - n2 ou n1 + n2).
+        - mensagem: guarda o texto final (com template string/interpolação ${resultado}) que será exibido.
+
+     7. innerHTML
+        - No fim de cada função, a variável mensagem é atribuída a div_exibir.innerHTML, exibindo o
+          resultado na tela.
+
+     RESUMO:
+     - Esta versão da calculadora resolve o mesmo problema das anteriores, mas usando VARIÁVEIS (let)
+       para guardar cada etapa do cálculo (números convertidos, resultado e mensagem) separadamente,
+       tornando o código mais legível, organizado e fácil de reaproveitar/depurar.
+     ==================================================================== -->

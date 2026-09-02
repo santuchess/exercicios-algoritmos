@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Controle de peso no elevador</title>
+  </head>
+  <body>
+    <span>Quantidade de homens</span>
+    <input type="text" id="id_homens" /><br />
+    <span>Quantidade de mulheres</span>
+    <input type="text" id="id_mulher" /><br />
+    <button onclick="calcular()">Ligar elevador</button>
+    <div id="id_exibir"></div>
+  </body>
+</html>
+<script>
+  function calcular() {
+    let homem = Number(id_homens.value); // 3x80
+    let mulher = Number(id_mulher.value); // 3x60
+
+    let pesoMulher = homem * 90;
+    let pesoHomem = mulher * 70;
+    let elevador = Number(500);
+
+    let resultado = pesoMulher + pesoHomem;
+
+    if (resultado <= 500) {
+      id_exibir.innerHTML = `<span style="color: green">Elevador vai se mover, pois está com ${resultado}kg<span>`;
+    } else {
+      let peso = elevador - resultado;
+      id_exibir.innerHTML = `<div style="color: red">Alguém precisa descer. Precisa perder ${peso}kg para mover o elevador</div>`;
+    }
+  }
+</script>

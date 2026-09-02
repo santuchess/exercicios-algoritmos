@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Qual é a temperatura do ambiente?</span>
+    <input type="text" id="ipt_ambiente">
+    <button onclick="mostrar()">Verificar</button>
+    <div id="id_exibir"></div>
+   
+</body>
+</html>
+<script>
+    function mostrar() {
+        let ambiente = Number(ipt_ambiente.value)
+
+        if(ambiente < 10) {
+            id_exibir.innerHTML = `Inapropriada p/ conservar alimento<br><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-tPWxvqjJdirK4R_85etFQWXeO8iGUAkYlFbfBlSF7g&s=10" alt="">`
+        } else {
+            id_exibir.innerHTML = `Apropriada p/ conservar alimento<br><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMXg7A8Ox-TdaQa115rryKCL1CGHFKWcNyVEiV5Ix4Yw&s=10" alt="">`
+        }
+    }
+</script>

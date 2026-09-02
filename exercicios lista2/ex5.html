@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>sua nota na escola: </span>
+    <input type="text" id="input_nota" value=""><br>
+    <button onclick="vo()">opinião da avó</button><br>
+    <button onclick="mae()">opinião da mãe</button><br>
+</body>
+</html>
+<script>
+    function vo() {
+        alert('Muito bem, que neto inteligente, porque tirou ' + input_nota.value + '!')
+    }
+    function mae() {
+        alert('Não fez mais que tua obrigação com essa nota ' + input_nota.value + '!')
+    }
+</script>

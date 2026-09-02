@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Qual é o sabor da pizza?</span>
+    <input type="text" id="id_sabor"><br>
+    <span>Qual é o preço da pizza?</span>
+    <input type="text" id="id_preco"><br>
+    <span>Quantos amigos vão comer?</span>
+    <input type="text" id="id_amigos"><br>
+    <button onclick="mostrar()">Ver valor por amigo</button>
+    <div id="id_mensagem"></div>
+</body>
+</html>
+<script>
+    function mostrar() {
+        let pizza = Number(id_preco.value)
+        let amigos = Number(id_amigos.value)
+        let caixinha = 100 * 0.10
+        let resultado = caixinha + pizza
+        let valorTotal = resultado / amigos
+        let sabor = (id_sabor.value)
+        let mensagem = `Cada amigo vai colaborar com RS ${valorTotal} para a pizza de ${sabor}.`
+
+        id_mensagem.innerHTML = mensagem;
+    }
+</script>

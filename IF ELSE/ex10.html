@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Informe a ultima serie que você assistiu</span>
+    <input type="text" id="id_serie"><br>
+    <span>Quantos episodios que você ja assistiu</span>
+    <input type="text" id="id_episodios"><br>
+    <button onclick="mostrar()">Verificar nível</button>
+    <div id="id_exibir"></div>
+</body>
+</html>
+<script>
+    function mostrar() {
+        let serie = id_serie.value
+        let episodios = Number(id_episodios.value)
+
+        let duracao = episodios * 22
+        let totalHoras = duracao / 60
+
+        if (totalHoras > 30) {
+            id_exibir.innerHTML = `Uau, você realmente gosta dessa série!`
+        } else {
+            id_exibir.innerHTML = `Vejo que você gosta da série ${id_serie.value}`
+        }
+    }
+</script>

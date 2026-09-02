@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Me passe um numero:</span>
+    <input type="text" id="id_num1"><br>
+    <span>Me passe mais um numero:</span>
+    <input type="text" id="id_num2"><br>
+    <button onclick="id_soma1()">Soma</button>
+    <button onclick="id_dif2()">Subtração</button>
+    <button onclick="id_prod3()">Multiplicação</button>
+    <button onclick="id_raz4()">Divisão</button>
+    <div id="id_exibir"></div>
+</body>
+</html>
+<script>
+    function id_soma1(){
+        let n1 = Number(id_num1.value)
+        let n2 = Number(id_num2.value)
+        let resultado = n1 + n2
+        let mensagem = `A soma entre ${id_num1.value} e ${id_num2.value} é ${resultado}`
+        
+        id_exibir.innerHTML = mensagem;
+
+    }
+    function id_dif2(){
+        let n1 = Number(id_num1.value)
+        let n2 = Number(id_num2.value)
+        let resultado = n1 - n2
+        let mensagem = `A diferença entre ${id_num1.value} e ${id_num2.value} é ${resultado}`
+        
+        id_exibir.innerHTML = mensagem;
+        
+    }
+    function id_prod3(){
+        let n1 = Number(id_num1.value)
+        let n2 = Number(id_num2.value)
+        let resultado = n1 * n2
+        let mensagem = `O produto entre ${id_num1.value} e ${id_num2.value} é ${resultado}`
+
+        id_exibir.innerHTML = mensagem;
+        
+    }
+    function id_raz4(){
+        let n1 = Number(id_num1.value)
+        let n2 = Number(id_num2.value)
+        let resultado = n1 / n2
+        let mensagem = `O produto entre ${id_num1.value} e ${id_num2.value} é ${resultado}`
+
+        id_exibir.innerHTML = mensagem;
+        
+    }
+
+</script>

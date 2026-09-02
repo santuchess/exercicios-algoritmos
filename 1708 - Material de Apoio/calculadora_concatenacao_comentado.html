@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora legal</title>
+  </head>
+  <body>
+    <input type="text" id="ipt_numero1" />
+    <input type="text" id="ipt_numero2" />
+    <button onclick="multiplicar()">Multiplicar</button>
+    <button onclick="dividir()">Dividir</button>
+    <button onclick="subtrair()">Subtrair</button>
+    <button onclick="somar()">Somar</button>
+    <div id="div_exibir"></div>
+  </body>
+</html>
+<script>
+  function multiplicar() {
+    div_exibir.innerHTML =
+      "O resultado da multiplicação é: " +
+      Number(ipt_numero1.value) * Number(ipt_numero2.value);
+  }
+
+  function dividir() {
+    div_exibir.innerHTML =
+      "O resultado da divisão é: " + ipt_numero1.value / ipt_numero2.value;
+  }
+
+  function subtrair() {
+    div_exibir.innerHTML =
+      "O resultado da subtração é: " + (ipt_numero1.value - ipt_numero2.value);
+  }
+
+  function somar() {
+    div_exibir.innerHTML =
+      "O resultado da soma é: " +
+      (Number(ipt_numero1.value) + Number(ipt_numero2.value));
+  }
+</script>
+
+<!-- ====================================================================
+     EXPLICAÇÃO DOS CONCEITOS APLICADOS
+     ====================================================================
+
+     1. <input type="text" id="...">
+        - Dois campos de texto para o usuário digitar os números da conta.
+        - O valor digitado sempre chega como TEXTO (string) em ipt_numero1.value / ipt_numero2.value, mesmo que pareça um número.
+
+     2. <button onclick="funcao()">
+        - Cada botão chama uma função diferente ao ser clicado, uma para cada operação matemática.
+
+     3. <div id="div_exibir">
+        - Elemento vazio usado apenas como "espaço reservado" para exibir o resultado depois do cálculo.
+
+     4. innerHTML
+        - Propriedade que substitui o conteúdo (HTML) de dentro do elemento.
+        - Ao atribuir um texto a div_exibir.innerHTML, esse texto passa a aparecer dentro da div.
+
+     5. CONCATENAÇÃO DE STRINGS (+)
+        - O operador + junta (concatena) texto com texto, formando a frase final.
+        - Ex.: "O resultado da soma é: " + 8  → "O resultado da soma é: 8"
+
+     6. Number(...)
+        - Converte o texto digitado no input para um valor numérico de fato.
+        - Em multiplicar() e somar() a conversão é feita manualmente, pois o operador + entre strings concatena
+          em vez de somar (ex.: "2" + "3" resultaria em "23", e não 5).
+
+     7. DIFERENÇA ENTRE AS OPERAÇÕES (ponto de atenção)
+        - dividir() e subtrair() NÃO usam Number() explicitamente, mas funcionam corretamente, pois os
+          operadores - e / só existem para números: o JavaScript converte as strings automaticamente.
+        - Já o operador + é ambíguo (serve tanto para somar números quanto para concatenar textos), por isso
+          exige a conversão manual com Number() para não concatenar os valores por engano.
+
+     RESUMO:
+     - Esta calculadora lê dois valores digitados em inputs (sempre como texto), realiza uma operação
+       matemática por função e exibe o resultado dentro de uma div usando innerHTML, unindo o texto
+       explicativo ao valor calculado por meio de concatenação de strings (+).
+     ==================================================================== -->

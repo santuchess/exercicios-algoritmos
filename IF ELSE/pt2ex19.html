@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <span>Qual é a meta de economia?</span>
+    <input type="text" id="id_meta" /><br />
+    <span>Quanto você tem guardado?</span>
+    <input type="text" id="id_economia" /><br />
+    <button onclick="mostrar()">Analisar economia</button>
+    <div id="id_exibir"></div>
+  </body>
+</html>
+<script>
+  function mostrar() {
+    let meta = Number(id_meta.value);
+    let economia = Number(id_economia.value);
+
+    let diferenca = economia - meta;
+    let diferencas = meta - economia;
+
+    if (economia == meta) {
+      id_exibir.innerHTML = ` Parabéns, meta alcançada!`;
+    } else {
+      if (economia < meta) {
+        id_exibir.innerHTML = `Força! Ainda em busca da meta! Falta ${diferenca}`;
+      } else {
+        if (economia > meta) {
+          id_exibir.innerHTML = ` Meta ultrapassada em ${diferenca}`
+        } else {
+        }
+      }
+    }
+  }
+</script>

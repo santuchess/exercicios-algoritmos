@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora legal</title>
+  </head>
+  <body>
+    <input type="text" id="ipt_numero1" />
+    <input type="text" id="ipt_numero2" />
+    <button onclick="multiplicar()">Multiplicar</button>
+    <button onclick="dividir()">Dividir</button>
+    <button onclick="subtrair()">Subtrair</button>
+    <button onclick="somar()">Somar</button>
+    <div id="div_exibir"></div>
+  </body>
+</html>
+<script>
+  function multiplicar() {
+    //IMPORTANTE: Sempre converta o valor para número quando for realizar um calculo
+
+    let n1 = Number(ipt_numero1.value);
+    let n2 = Number(ipt_numero2.value);
+    let resultado = n1 * n2;
+    let mensagem = `O resultado da multiplacação é ${resultado}`;
+
+    div_exibir.innerHTML = mensagem;
+  }
+
+  function dividir() {
+    //IMPORTANTE: Sempre converta o valor para número quando for realizar um calculo
+
+    let n1 = Number(ipt_numero1.value);
+    let n2 = Number(ipt_numero2.value);
+    let resultado = n1 / n2;
+    let mensagem = `O resultado da divisão é ${resultado}`;
+
+    div_exibir.innerHTML = mensagem;
+  }
+
+  function subtrair() {
+    //IMPORTANTE: Sempre converta o valor para número quando for realizar um calculo
+
+    let n1 = Number(ipt_numero1.value);
+    let n2 = Number(ipt_numero2.value);
+    let resultado = n1 - n2;
+    let mensagem = `O resultado da subtração é ${resultado}`;
+
+    div_exibir.innerHTML = mensagem;
+  }
+
+  function somar() {
+    //IMPORTANTE: Sempre converta o valor para número quando for realizar um calculo
+
+    let n1 = Number(ipt_numero1.value);
+    let n2 = Number(ipt_numero2.value);
+    let resultado = n1 + n2;
+    let mensagem = `O resultado da soma é ${resultado}`;
+
+    div_exibir.innerHTML = mensagem;
+  }
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Nota 1</span>
+    <input type="text" id="id_nota1"><br>
+    <span>Nota 2</span>
+    <input type="text" id="id_nota2"><br>
+    <span>Nota 3</span>
+    <input type="text" id="id_nota3"><br>
+    <button onclick="mostrar()">Analisar desempenho</button>
+    <div id="id_exibirNota"></div>
+</body>
+</html>
+<script>
+    function mostrar() {
+        let media1 = Number(id_nota1.value) // 10   
+        let media2 = Number(id_nota2.value) // 7
+        let media3 = Number(id_nota3.value) // 3
+
+        let res1 = media1 + media2 + media3
+
+        let resultado = res1 / 3
+
+        if(resultado >9.4) {
+            id_exibirNota.innerHTML = `Sua media foi de ${resultado.toFixed(3)}, Parabéns, você é fora de série!`
+        } else { (res1 <9.4)
+            id_exibirNota.innerHTML = `Sua media foi de ${resultado.toFixed(3)}, onde ${resultado.toFixed(3)} é a media calculada`
+        }
+        
+    }
+</script>

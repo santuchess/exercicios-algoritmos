@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <span>Qual o saldo da conta?</span>
+    <input type="text" id="id_saldo" /><br />
+    <span>Valor do debito</span>
+    <input type="text" id="id_debito" /><br />
+    <button onclick="mostrar()">Analisar conta</button>
+    <div id="id_exibir"></div>
+  </body>
+</html>
+<script>
+  // let saldo = Number(id_saldo.value)
+  function mostrar() {
+    let saldo = Number(id_saldo.value);
+    let debito = Number(id_debito.value);
+    let conta = saldo - debito;
+
+    if (conta > 0) {
+      id_exibir.innerHTML = `O saldo atual da conta corrente é ${conta}`;
+    } else {
+      id_exibir.innerHTML = `<b style="color: red">O saldo atual da conta corrente é ${conta}<b>`;
+    }
+  }
+</script>

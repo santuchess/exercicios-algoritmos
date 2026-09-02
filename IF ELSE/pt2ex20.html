@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>qual é a frequencia do aluno?</span>
+    <input type="text" id="ipt_frequencia"><br>
+    <button onclick="analisar()">Analisar</button>
+    <div id="id_exibir"></div>
+</html>
+<script>
+    function analisar() {
+        let frequencia = Number(ipt_frequencia.value)
+
+        if(frequencia < 50) {
+            id_exibir.innerHTML = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkg499hBX7u6sQRw0AUCbnAuHrJ8rNsWWZmGYI4oepKA&s=10" alt="">`
+        } else {
+            id_exibir.innerHTML = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzjM_nthMUOfGXOAhFDm9Q3Zg2WENB4ZsYhgJaeWy9WA&s=10" alt="">`
+        }
+    }
+</script>

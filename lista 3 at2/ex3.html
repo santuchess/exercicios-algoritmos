@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Qual é o seu nome?</span>
+    <input type="text" id="id_nome"><br>
+    <span>Qual é a nota da atividade 1?</span>
+    <input type="text" id="id_nota1"><br>
+    <span>Qual é a nota da atividade 2?</span>
+    <input type="text" id="id_nota2"><br>
+    <span>Qual é a nota da atividade 3?</span>
+    <input type="text" id="id_nota3"><br>
+    <button onclick="mostrarnota()">Mostrar nota</button>
+    <div id="id_mostrar"></div>
+</body>
+</html>
+<script>
+    function mostrarnota() {
+        let n1 = Number(id_nota1.value)
+        let n2 = Number(id_nota2.value)
+        let n3 = Number(id_nota3.value)
+        let nome = (id_nome)
+        let resultado = n1 + n2 + n3
+        let media = resultado / 3
+        let mensagem = `A soma das suas três atividades é: ${resultado}<br>
+        ${nome.value}, A média das suas atividades é: ${media}`
+
+        id_mostrar.innerHTML = mensagem;
+    }
+</script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>CALCULADORA LEGAL</title>
+</head>
+<body>
+    <input type="text" id="id_numero1">
+    <input type="text" id="id_numero2">
+    <button onclick="multiplicar()">Multiplicar</button>
+    <button onclick="divisao()">Divisão</button>
+    <button onclick="subtrair()">Subtrair</button>
+    <button onclick="somar()">Somar</button>
+    <div id="id_exibir"></div>
+</body>
+</html>
+<script>
+    function multiplicar() {
+        let n1 = Number(id_numero1.value);
+        let n2 = Number(id_numero2.value);
+        let resultado = n1 * n2
+        let mensagem = `O resultado da multiplicação é: ${(resultado)}`
+        id_exibir.innerHTML = mensagem;
+    }
+    function multiplicar() {
+        let n1 = Number(id_numero1.value);
+        let n2 = Number(id_numero2.value);
+        let resultado = n1 / n2
+        let mensagem = `O resultado da divisão é: ${(resultado)}`
+        id_exibir.innerHTML = mensagem;
+    }
+    function multiplicar() {
+        let n1 = Number(id_numero1.value);
+        let n2 = Number(id_numero2.value);
+        let resultado = n1 - n2
+        let mensagem = `O resultado da subtração é: ${(resultado)}`
+        id_exibir.innerHTML = mensagem;
+    }
+    function multiplicar() {
+        let n1 = Number(id_numero1.value);
+        let n2 = Number(id_numero2.value);
+        let resultado = n1 + n2
+        let mensagem = `O resultado da soma é: ${(resultado)}`
+        id_exibir.innerHTML = mensagem;
+    }
+</script>

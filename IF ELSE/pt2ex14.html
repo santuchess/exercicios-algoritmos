@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <span>Nota 1:</span>
+    <input type="text" id="id_nota1" /><br />
+    <span>Nota 2:</span>
+    <input type="text" id="id_nota2" /><br />
+    <button onclick="mostrar()">Verificar situação</button>
+    <div id="id_exibir"></div>
+  </body>
+</html>
+<script>
+  function mostrar() {
+    let nota1 = Number(id_nota1.value);
+    let nota2 = Number(id_nota2.value);
+
+    let soma = nota1 + nota2;
+    let media = soma / 2;
+
+    if (media >= 6) {
+      alert(`Parabéns, aprovado!`);
+    } else {
+      alert(`Tente outra vez...`);
+    }
+  }
+</script>

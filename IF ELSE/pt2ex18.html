@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mercado BOM DOCE</title>
+  </head>
+  <body>
+    <span>Quantos chocolates foram comprados?</span>
+    <input type="text" id="id_quantidade" /><br />
+    <button onclick="mostrar()">Compra</button>
+    <div id="id_exibir"></div>
+    <br />
+  </body>
+</html>
+<script>
+  function mostrar() {
+    let quantidade = Number(id_quantidade.value);
+    let preco = quantidade * 3;
+    let desconto = quantidade * 2.5;
+
+    if (quantidade > 12) {
+      id_exibir.innerHTML = `o valor da sua compra foi de ${desconto}`;
+    } else {
+      id_exibir.innerHTML = `o valor da sua compra foi de ${preco}`;
+    }
+  }
+</script>
