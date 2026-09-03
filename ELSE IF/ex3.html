@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Para o ser humano, a temperatura é... :
+    <input type="text" id="ipt_temperatura">
+    <button onclick="mostrar()">Mostrar temperatura</button>
+    <div id="id_exibir"></div>
+</body>
+</html>
+<script>
+    function mostrar() {
+        let temperatura = Number(ipt_temperatura.value)
+
+        if(temperatura < 14) {
+            id_exibir.innerHTML = `Congelante (até menos de 14ºC)`
+        } else if(temperatura <= 21) {
+            id_exibir.innerHTML = `Com Frio (entre 14ºC e 21ºC)`
+        } else if(temperatura <= 24) {
+            id_exibir.innerHTML = `Confortável (mais de 21ºC até 24ºC)`
+        } else if(temperatura <= 31) {
+            id_exibir.innerHTML = `Com Calor (mais de 24ºC até 31ºC)`
+        } else {
+            id_exibir.innerHTML = `Calor escaldante (mais de 31ºC)` 
+        }
+    }
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    pães franceses o usuário tem comido por dia
+    <input type="text" id="ipt_frances"><br>
+    pacotes de bolacha recheada o usuário tem comido por dia
+    <input type="text" id="ipt_bolacha"><br>
+    copos de achocolatado o usuário tem tomado por dia
+    <input type="text" id="ipt_achocolatado"><br>
+    <button onclick="mostrar()">Verificar calorias</button>
+    <div id="id_exibir"></div>
+</body>
+</html>
+<script>
+    function mostrar(){
+        let frances = Number(ipt_frances.value * 50)
+        let bolacha = Number(ipt_bolacha.value * 80)
+        let chocolate = Number(ipt_achocolatado.value * 70)
+
+        let resultado = frances + bolacha + chocolate
+
+        if(resultado < 200) {
+            id_exibir.innerHTML = `Parabéns, vai ficar em forma!`
+        } else if(resultado <= 400) {
+            id_exibir.innerHTML = `Cuidado, vai ficar menos saudável !`
+        } else {
+            id_exibir.innerHTML = `Alerta crítico de saúde !!!`
+        }
+    }
+</script>
