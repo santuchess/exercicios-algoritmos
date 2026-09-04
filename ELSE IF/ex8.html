@@ -7,18 +7,27 @@
   </head>
   <body>
     Qual é a sua meta de economia?:
-    <input type="text" id="ipt_meta" />] Quanto tem guardado?
-    <input type="text" id="ipt_guardado" />
-    <button onclick="id_exibir"></button>
+    <input type="text" id="ipt_meta" /><br />
+    Quanto tem guardado?
+    <input type="text" id="ipt_guardado" /><br />
+    <button onclick="mostrar()">Analisar economia</button>
+    <div id="id_exibir"></div>
   </body>
 </html>
 <script>
   function mostrar() {
-      let meta = Number(ipt_meta.value)
-      let guardado = Number(ipt_guardado.value)
+    let meta = Number(ipt_meta.value);
+    let guardado = Number(ipt_guardado.value);
 
-      if(guardado == meta) {
-          id_exibir.innerHTML = `Parabéns, meta alcançada!`
-      } else if()
+    let diferenca = meta - guardado;
+
+    if (guardado == meta) {
+      id_exibir.innerHTML = `Parabéns, meta alcançada!`;
+    } else if (guardado > meta) {
+      let diferenca = guardado - meta;
+      id_exibir.innerHTML = `Meta ultrapassada em ${diferenca}`;
+    } else if (guardado < meta) {
+      id_exibir.innerHTML = `Força! Ainda em busca da meta! Falta ${diferenca}`;
+    }
   }
 </script>

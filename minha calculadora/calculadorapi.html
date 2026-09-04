@@ -7,16 +7,30 @@
     <link rel="stylesheet" href="csscalculadora.css" />
   </head>
   <body>
-    <b>Qual é a altura do silo?:</b>
+    <h3>Qual é a altura do silo?:</h3>
+    <br />
+    <h5>
+      Distância entre o topo (onde o sensor fica instalado) até o fundo do silo.
+      <p>
+        É uma medida fixa da estrutura. Você mede uma ez só, na hora de
+        cadastrar o silo, e não muda depois.
+      </p>
+    </h5>
     <input type="text" id="ipt_alturaSilo" /><br />
     <img
       src="c:\Users\Usuario\Downloads\vista_lateral_altura_silo.png"
       alt=""
       style="width: 40%"
       class="altura"
-    />
-    <p></p>
+    /><br />
     <b>Medida do silo feita pelo sensor:</b>
+    <h5>
+      Distância que o sensor está lendo agora entre ele e a superfície do milho.
+      <p>
+        Esse valor muda toda vez que o nível de grão sobe ou desce, quanto menor
+        a distância, mais cheio está o silo.
+      </p>
+    </h5>
     <input type="text" id="ipt_sensor" /><br />
     <img
       src="c:\Users\Usuario\Downloads\sensor_medindo_silo_topo.png"
@@ -25,13 +39,18 @@
       class="sensor"
     /><br />
     <b>Qual é a medida do meio até a borda?:</b>
-    <input type="dwdwdw" id="ipt_diametro" /><br />
+    <h5>
+      Distância do centro da base do silo até a parede (não é de um lado a
+      outro, é só até o meio).
+      <p>Também é uma medida fixa, tirada uma vez na estrutura.</p>
+    </h5>
+    <input type="text" id="ipt_diametro" /><br />
     <img
       src="c:\Users\Usuario\Downloads\vista_de_cima_raio_silo.png"
       alt=""
       style="width: 40%"
       class="altura"
-    />
+    /><br />
     <button onclick="calcular()">Calcular</button>
     <div id="id_exibir"></div>
   </body>
@@ -48,6 +67,12 @@
 
     let porcentagem = (volumeOcupado / volumeTotal) * 100;
 
-    id_exibir.innerHTML = `Armazenamento atual é de ${porcentagem.toFixed(1)}% de 100%`;
+    if (porcentagem <= 30) {
+      id_exibir.innerHTML = `Estoque baixo! ${porcentagem.toFixed(1)}% de 100%`;
+    } else if (porcentagem <= 50) {
+      id_exibir.innerHTML = `Estoque medio! ${porcentagem.toFixed(1)}% de 100%`;
+    } else if (porcentagem <= 90) {
+      id_exibir.innerHTML = `Estoque quase cheio! ${porcentagem.toFixed(1)}% de 100%`;
+    }
   }
 </script>
