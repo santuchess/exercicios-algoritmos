@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Critérios de Preferência de Augusto Bivio</title>
+</head>
+<body>
+    Nome da empresa:
+    <input type="text" id="ipt_empresa">
+
+    Valor da bolsa:
+    <input type="text" id="ipt_bolsa">
+
+    Valor do VR:
+    <input type="text" id="ipt_vr">
+
+    Tempo de deslocamento (minutos):
+    <input type="text" id="ipt_tempo">
+
+    <button onclick="verificar()">É preferida?</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function verificar() {
+        let empresa = ipt_empresa.value
+        let bolsa = Number(ipt_bolsa.value)
+        let vr = Number(ipt_vr.value)
+        let tempo = Number(ipt_tempo.value)
+
+        if (bolsa >= 1800 || vr >= 20 || tempo <= 30) {
+            div_mensagem.innerHTML = `A empresa ${empresa} é uma de suas preferências`
+
+        } else {
+            div_mensagem.innerHTML = `A empresa ${empresa} está fora da sua lista`
+        }
+    }
+</script>

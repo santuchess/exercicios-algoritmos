@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="calcular()">Calcular resto</button><br>
+    <span>divisor:</span>
+    <input type="text" id="id_divisor"><br>
+    <span>dividendo:</span>
+    <input type="text" id="id_dividendo"><br>
+    <div id="id_mensagem"></div>
+</body>
+</html>
+<script>
+    function calcular() {
+        let divisor = Number(id_divisor.value)
+        let dividendo = Number(id_dividendo.value)
+        let resto = divisor % dividendo
+
+        id_mensagem.innerHTML = `A divisão de ${divisor} e ${dividendo} possui resto ${resto}`
+    }
+</script>

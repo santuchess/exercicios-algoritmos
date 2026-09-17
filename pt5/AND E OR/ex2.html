@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual é o tamanho da tela do celular?
+    <input type="text" id="ipt_tamanhoTela"><br>
+    Qual é a cor do celular encontrado?
+    <select id="ipt_cor"><br>
+        <option>Preto</option>
+        <option>Prata</option>
+        <option>Azul</option>
+        <option>Vermelho</option>
+    </select><br>
+    <button onclick="avaliar()">Será que ele gosta?</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+
+    function avaliar() {
+        let tamanhoTela = Number(ipt_tamanhoTela.value)
+        let cor = ipt_cor.value
+
+        if (tamanhoTela >= 6.5 && (cor == 'Preto' || cor == 'Prata')) {
+            div_mensagem.innerHTML = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkfx1ZkFZjgF8JZMCLNAYS29BSVU7ZxZ942-L-j-COMA&s=10" alt="">`
+        } else {
+            div_mensagem.innerHTML = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx-PPLKgxKCLv5yMmYr4slZFGH0ZIB-3YZ9ujRbZ0srw&s=10" alt="">`
+        }
+
+    }
+
+</script>

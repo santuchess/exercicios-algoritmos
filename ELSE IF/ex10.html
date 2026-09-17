@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Limite de Velocidade</title>
+  </head>
+  <body>
+    Qual velocidade que está dirigindo?
+    <input type="text" id="ipt_velo" /><br />
+    Qual é o limite de velocidade da via?
+    <input type="text" id="ipt_limite" /><br />
+    <button onclick="mostrar()">Verificar</button>
+    <div id="id_exibir"></div>
+  </body>
+</html>
+<script>
+  function mostrar() {
+    let velo = Number(ipt_velo.value);
+    let veloLimite = Number(ipt_limite.value);
+
+    let limite = (20 / 100) * veloLimite;
+
+    if (velo <= veloLimite) {
+      id_exibir.innerHTML = `Velocidade dentro do limite. Boa direção!`;
+    } else if (velo == limite) {
+      id_exibir.innerHTML = `Atenção! Excedendo o limite permitido.`;
+    } else {
+      id_exibir.innerHTML = `Multa grave! Velocidade muito acima do permitido.`;
+    }
+  }
+</script>

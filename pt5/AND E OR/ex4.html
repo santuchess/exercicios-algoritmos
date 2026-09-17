@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>Autenticação Segura: Acesso ao Banco Melete</H1>
+    Informe o login:
+    <input type="text" id="ipt_login"><br>
+    Informe a senha:
+    <input type="text" id="ipt_senha"><br>
+    Informe o palavra de segurança:
+    <input type="text" id="ipt_palavra"><br>
+    <button onclick="autenticar()">Autenticar</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function autenticar() {
+        let login = ipt_login.value
+        let senha = ipt_senha.value
+        let palavraSeg = ipt_palavra.value
+
+        if (login == 'ana' && senha == 'braga' && (palavraSeg == 1949 || palavraSeg == 'louro josé')) {
+            div_mensagem.innerHTML = `Usuário autenticado`
+        } else {
+            div_mensagem.innerHTML = `Falha na autenticação`
+        }
+
+    }
+</script>

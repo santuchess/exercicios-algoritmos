@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>Desempenho Escolar: O Aluno Foi Aprovado?</H1>
+    Informe a frequência do aluno:
+    <input type="text" id="ipt_frequencia"><br>
+    Informe a nota do aluno:
+    <input type="text" id="ipt_nota"><br>
+    <button onclick="verificar()"">Analisar aluno</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function verificar() {
+        let frequencia = Number(ipt_frequencia.value)
+        let nota = Number(ipt_nota.value)
+
+        if (nota < 0 || nota > 10) {
+            alert('Onde já se viu nota <0 ou >10?!')
+        } else if (frequencia < 0 || frequencia > 100) {
+            alert ('Onde já se viu frequência <0 ou >100?!')
+        } else if (nota >= 0 && nota < 6) {
+            div_mensagem.innerHTML = `Aluno ficou abaixo da média`
+        } else if (nota > 6 && nota < 8) {
+            div_mensagem.innerHTML = `Aluno ficou na média`
+        } else if (nota >= 8 && nota <= 10) {
+            div_mensagem.innerHTML = `Aluno acima da média`
+        } else if (frequencia >= 75) {
+            div_mensagem.innerHTML = `Aluno aprovado por frequência`
+        } else {
+            div_mensagem.innerHTML = `Aluno reprovado por frequência`
+        }
+        
+    }
+</script>

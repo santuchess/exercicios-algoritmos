@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Informe sua nota:
+    <input type="text" id="ipt_nota" />
+    <button onclick="verificar()">Verificar nota</button>
+    <div id="div_mensagem"></div>
+  </body>
+</html>
+<script>
+  function verificar() {
+    let nota = Number(ipt_nota.value);
+
+    if (nota >= 0 && nota <= 10) {
+      alert("nota valida!");
+    } else {
+      alert("Onde já se viu nota menor que 0 e maior que 10?!");
+    }
+  }
+</script>

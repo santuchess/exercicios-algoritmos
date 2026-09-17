@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recarga Fidelidade</title>
+</head>
+<body>
+    Quantas passagens deseja adquirir?:
+    <input type="text" id="ipt_passagens">
+    <button onclick="mostrar()">Comprar</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function mostrar() {
+        let passagens = Number(ipt_passagens.value)
+
+        if (passagens >= 8 && passagens <= 50) {
+
+            if (passagens >= 8 && passagens <= 19) {
+                let valorPassagem = (passagens * 4.40) * 0.97
+                div_mensagem.innerHTML = `Total a pagar: R$${valorPassagem.toFixed(2)}`
+
+            } else if (passagens >= 20 && passagens <= 49) {
+                let valorPassagem = (passagens * 4.40) * 0.95
+                div_mensagem.innerHTML = `Total a pagar: R$${valorPassagem.toFixed(2)}`
+
+            } else if (passagens == 50) {
+                let valorPassagem = (passagens * 4.40) * 0.93
+                div_mensagem.innerHTML = `Total a pagar: R$${valorPassagem.toFixed(2)}`
+            }
+
+        } else {
+            alert("Quantidade inválida para o Fidelidade!")
+            div_mensagem.innerHTML = ""
+        }
+    }
+</script>

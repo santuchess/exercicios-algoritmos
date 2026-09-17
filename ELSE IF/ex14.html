@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Como você está se sentindo hoje?
+    <select id="select_humor">
+      <option value="Feliz">Feliz</option>
+      <option value="Triste">Triste</option>
+      <option value="Bravo">Bravo</option>
+      <option value="Surpreso">Surpreso</option>
+      <option value="Cansado">Cansado</option>
+    </select>
+
+    <button onclick="mostrar()">Mostrar Humor</button>
+    <div id="id_exibir"></div>
+  </body>
+</html>
+<script>
+  function mostrar() {
+    let humor = select_humor.value;
+
+    if (humor == "Feliz") {
+      id_exibir.innerHTML = `😁`;
+    } else if (humor == "Triste") {
+      id_exibir.innerHTML = `😔`;
+    } else if (humor == "Bravo") {
+      id_exibir.innerHTML = `🤬`;
+    } else if (humor == "Surpreso") {
+      id_exibir.innerHTML = `😮`;
+    } else if (humor == "Cansado") {
+      id_exibir.innerHTML = `🥱`;
+    }
+  }
+</script>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Informe o usuario:
+    <input type="text" id="ipt_usuario" />
+    Informe a senha:
+    <input type="text" id="ipt_senha" />
+    <button onclick="verificar()">Entrar</button>
+    <div id="div_mensagem"></div>
+  </body>
+</html>
+<script>
+  function verificar() {
+    let usuario = ipt_usuario.value;
+    let senha = ipt_senha.value;
+
+    if (usuario == "SPTech" && senha == "digital") {
+      div_mensagem.innerHTML = `Usuário autenticado com sucesso`;
+    } else {
+      div_mensagem.innerHTML = `Falha na autenticação`;
+    }
+  }
+</script>

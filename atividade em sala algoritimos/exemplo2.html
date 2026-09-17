@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="divisor">
+    <input type="text" id="resultado">
+    <button onclick="calcular()">Calcular resto</button>
+    <button onclick="dividir()">dividir</button>
+    <div id="mens"></div>
+</body>
+</html>
+<script>
+    function calcular() {
+        let divisor = Number(divisor.value)
+        let dividendo = Number(dividendo.value)
+        let resto = divisor % dividendo;
+        let resultado = divisor / dividendo
+        let resultadoFormatado = resultado.tofixed(2)
+
+        mens.innerHTML = `A divisão de $
+        {divisor} por ${dividendo} resulta em: $`
+    }
+</script>

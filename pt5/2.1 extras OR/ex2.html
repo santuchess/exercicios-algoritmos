@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Informe sua nota do enem:
+    <input type="text" id="ipt_notaEnem" /><br />
+    Informa sua nota do vestibular:
+    <input type="text" id="ipt_notaVestibular" />
+    <button onclick="verificar()">Avaliação</button>
+    <div id="div_mensagem"></div>
+  </body>
+</html>
+<script>
+  function verificar() {
+    let nota = Number(ipt_notaEnem.value);
+    let notaVestibular = Number(ipt_notaVestibular.value);
+
+    if (nota >= 800 || notaVestibular >= 700) {
+      alert("Parabéns! Aprovado");
+    } else {
+      alert("Tente semestre que vem!");
+    }
+  }
+</script>

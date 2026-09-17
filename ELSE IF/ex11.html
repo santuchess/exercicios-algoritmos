@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Qual é a umidade atual do ambiente?
+    <input type="text" id="ipt_umidade" />
+    <button onclick="mostrar()">Verificar umidade</button>
+    <div id="id_exibir"></div>
+  </body>
+</html>
+<script>
+  function mostrar() {
+    let umidade = Number(ipt_umidade.value);
+
+    if (umidade < 0 || umidade > 100) {
+      id_exibir.innerHTML = `Por favor, insira um valor válido entre 0 e 100.`;
+    } else if (umidade <= 12) {
+      id_exibir.innerHTML = `Estado de Emergencia`;
+    } else if (umidade <= 20) {
+      id_exibir.innerHTML = `Estado de alerta`;
+    } else if (umidade <= 30) {
+      id_exibir.innerHTML = `Estado de atenção`;
+    } else {
+      id_exibir.innerHTML = `Nenhum risco`;
+    }
+  }
+</script>

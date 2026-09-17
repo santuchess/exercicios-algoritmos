@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    qual é a sua nota?:
+    <input type="text" id="ipt_nota" />
+    qual é sua frequencia?:
+    <input type="text" id="ipt_frequencia" />
+    <button onclick="verificar()">Avaliar aluno</button>
+    <div id="div_mensagem"></div>
+  </body>
+</html>
+<script>
+  function verificar() {
+    let nota = Number(ipt_nota.value);
+    let frequencia = Number(ipt_frequencia.value);
+
+    if (nota >= 6 && frequencia >= 75) {
+      alert("Parabéns! Aprovado!");
+    } else {
+      alert("Infelizmente, não foi desta vez");
+    }
+  }
+</script>
