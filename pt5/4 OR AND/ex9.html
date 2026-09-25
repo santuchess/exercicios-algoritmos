@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Acesso à Academia 24 Horas</h1>
+    Qual é o seu plano?:
+    <select id="select_plano">
+        <option disabled selected>Selecione uma opção</option>
+        <option>Plano Basico</option>
+        <option>Plano Premium</option>
+    </select><br>
+    O check-in foi validado?:
+    <select id="select_checkin">
+        <option disabled selected>Selecione uma opção</option>
+        <option>Sim</option>
+        <option>Não</option>
+    </select><br>
+    Qual é a hora atual?:
+    <input type="text" id="ipt_hora"><br>
+    <button onclick="verificar()">Liberar Acesso</button>
+</body>
+</html>
+<script>
+    function verificar() {
+        let plano = select_plano.value;
+        let checkin = select_checkin.value;
+        let hora = Number(ipt_hora.value);
+
+        if (checkin == 'Sim' && (plano == 'Plano Premium' || (plano == 'Plano Basico' && hora >= 6 && hora <= 22))) {
+            alert('Acesso liberado');
+        } else {
+            alert('Acesso negado');
+        }
+    }
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Elegibilidade para Vacinação Prioritária</h1>
+    Informe sua idade:
+    <input type="text" id="ipt_idade"><br>
+    Possui alguma comorbidade?
+    <select id="select_condicao">
+        <option disabled selected>Selecione uma opção</option>
+        <option>Sim</option>
+        <option>Não</option>
+    </select><br>
+    No cadastro a saude está em dia?
+    <select id="select_saude">
+        <option disabled selected>Selecione uma opção</option>
+        <option>Sim</option>
+        <option>Não</option>
+    </select><br>
+    <button onclick="verificar()">Verificar Acesso</button>
+</body>
+</html>
+<script>
+    function verificar() {
+        let idade = Number(ipt_idade.value);
+        let condicao = select_condicao.value;
+        let saude = select_saude.value;
+
+        if (idade >= 60 || (condicao == 'Sim' && saude == 'Sim')) {
+            alert('Acesso permitido');
+        } else {
+            alert('Acesso negado');
+        }
+    }
+</script>

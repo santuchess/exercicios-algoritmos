@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+.body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.div {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  text-align: justify;
+}
+</style>
+
+
+</head>
+<body class="body" style="text-align: center;">
+    <h1 class="h1">Aprovação de Crédito Bancário</h1>
+    
+    <div class="div">
+        Informe sua renda mensal:
+        <input type="text" id="ipt_rendaMensal"><br>
+        Informe seu score de credito:
+        <input type="text" id="ipt_score"><br>
+        Há quantos anos é correntista?:
+        <input type="text" id="ipt_anos"><br>
+        Possui dividas em aberto?:
+        <select id="id_select">
+        <option>Sim</option>
+        <option>Não</option>
+        </select><br>
+        <button onclick="verificar()">Analisar credito</button>
+    </div>
+
+</body>
+</html>
+<script>
+    function verificar() {
+        let renda = Number(ipt_rendaMensal.value)
+        let score = Number(ipt_score.value)
+        let correntista = Number(ipt_anos.value)
+        let dividas = id_select.value
+
+        if (renda >= 3000 && score >= 600 || (correntista > 5 || dividas == 'Não')) {
+            alert('Emprestimo aprovado!')
+        } else {
+            alert('Emprestimo negado!')
+        }
+    }
+</script>

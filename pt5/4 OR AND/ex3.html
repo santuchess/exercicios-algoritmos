@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>Bolsa de Estudos Integral</H1>
+    Renda per capita do aluno:
+    <input type="text" id="ipt_rendaCapita"><br>
+    Media escolar:
+    <input type="text" id="ipt_media"><br>
+    <select id="id_select">
+        <option>Sim</option>
+        <option>Não</option>
+    </select><br>
+    <button onclick="verificar()">Verificar bolsa</button>
+</body>
+</html>
+<script>
+    function verificar () {
+        let renda = Number(ipt_rendaCapita.value)
+        let media = Number(ipt_media.value)
+        let select = id_select.value
+
+        if (renda <= 800 && media >= 8 || (select == "Sim" && media >= 6)) {
+            alert ('Bolsa integral concedida!')
+        } else {
+            alert ('Bolsa não concedida')
+        }
+    }
+</script>

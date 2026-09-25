@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Primeira e Última letra</h1>
+    Informe uma frase:
+    <input type="text" id="ipt_frase"><br>
+    Informe uma palavra
+    <input type="text" id="ipt_palavra"><br>
+    <button onclick="verificar()"">Analisar Frase</button>
+    <div id="div_mensagem""></div>
+</body>
+</html>
+<script>
+    function verificar() {
+        let frase = ipt_frase.value
+        let palavra = ipt_palavra.value
+
+        if (frase.startsWith(palavra) & frase.endsWith(palavra)) {
+            div_mensagem.innerHTML = `A frase começa e termina com ${palavra}!`
+        } else if (frase.startsWith(palavra)){
+            div_mensagem.innerHTML = `A frase começa com ${palavra}!`
+        } else if (frase.endsWith(palavra)) {
+            div_mensagem.innerHTML = `A frase termina com ${palavra}!` 
+        } else {
+            div_mensagem.innerHTML = `A frase não começa e nem termina com ${palavra}!`
+        }
+    }
+</script>
+OBS: utilize .startsWith() e .endsWith() para validar se o texto começa ou termina com algum valor específico.

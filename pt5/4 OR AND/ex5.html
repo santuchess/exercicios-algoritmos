@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Check-in de Voo</h1>
+    O documento do passageiro está valido?:
+    <select id="select_doc">
+        <option selected disabled>Seleciona uma opção</option>
+        <option>Sim</option>
+        <option>Não</option>
+    </select><br>
+    Passageiro fez o check in online?:
+    <select id="select_check">
+        <option selected disabled>Selecione uma opção</option>
+        <option>Sim</option>
+        <option>Não</option>
+    </select><br>
+    Informe quantas horas de antecedência chegou ao aeroporto?:
+    <input type="text" id="ipt_horas"><br>
+    <button onclick="verificar()">Verificar embarque</button>
+</body>
+</html>
+<script>
+    function verificar() {
+        let doc = select_doc.value
+        let checkin = select_check
+        let horas = Number (ipt_horas.value)
+
+        if (doc == 'Sim' && (checkin == 'Online' || horas >= 2)) {
+            alert('Embarque liberado')
+        } else {
+            alert('Embarque negado')
+        }
+    }
+</script>
