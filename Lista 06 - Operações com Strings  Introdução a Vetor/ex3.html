@@ -20,7 +20,7 @@
         let frase = ipt_frase.value
         let palavra = ipt_palavra.value
 
-        if (frase.startsWith(palavra) & frase.endsWith(palavra)) {
+        if (frase.startsWith(palavra) && frase.endsWith(palavra)) {
             div_mensagem.innerHTML = `A frase começa e termina com ${palavra}!`
         } else if (frase.startsWith(palavra)){
             div_mensagem.innerHTML = `A frase começa com ${palavra}!`
@@ -31,4 +31,3 @@
         }
     }
 </script>
-OBS: utilize .startsWith() e .endsWith() para validar se o texto começa ou termina com algum valor específico.
