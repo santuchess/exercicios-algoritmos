@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Jogo da Palavra Secreta</h1>
+
+    Informe uma letra:
+    <input type="text" id="ipt_letra1"><br>
+    Informe outra letra:
+    <input type="text" id="ipt_letra2"><br>
+    <button onclick="verificar()">Verificar letras</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function verificar() {
+        let letra1 = ipt_letra1.value
+        let letra2 = ipt_letra2.value
+        let palavra = 'morango'
+
+        if (palavra.includes(letra1)) {
+            div_mensagem.innerHTML = `A letra ${letra1} aparece na palavra secreta!`
+        } else {
+            div_mensagem.innerHTML = `A letra ${letra1} não aparece na palavra secreta`
+        }
+        if(palavra.includes(letra2)) {
+            div_mensagem.innerHTML = `A letra ${letra2} aparece na palavra secreta!`
+        } else {
+            div_mensagem.innerHTML = `A letra ${letra2} não aparece na palavra secreta`
+        }
+    }
+</script>

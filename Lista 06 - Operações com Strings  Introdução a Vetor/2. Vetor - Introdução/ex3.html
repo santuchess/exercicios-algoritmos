@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Relembrando Moradias: Onde Você Já Viveu?</h1>
+    Informe seu bairro:
+    <input type="text" id="ipt_bairro" /><br>
+    <button onclick="cadastrar()">Cadastrar bairro</button><br />
+    Informe um numero para relembrar o bairro:
+    <input type="text" id="ipt_numero">
+    <button onclick="relembrar()">Relembrar moradia</button>
+    <div id="div_mensagem"></div>
+  </body>
+</html>
+<script>
+  let lista = [];
+  function cadastrar() {
+
+    let bairro = ipt_bairro.value;
+    lista.push(bairro);
+    console.log(lista);
+  }
+  function relembrar() {
+    let numero = Number(ipt_numero.value)
+
+    if (lista[numero - 1]) {
+        div_mensagem.innerHTML = lista[numero - 1]
+    } else {
+        div_mensagem.innerHTML = `Você ainda não morou num ${numero}º bairro!`
+    }
+  }
+</script>

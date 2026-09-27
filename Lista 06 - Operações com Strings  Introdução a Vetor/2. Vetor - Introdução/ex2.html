@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Diário de Viagens: Do Primeiro ao Último Destino</h1>
+    Destino viagem
+    <input type="text" id="ipt_destino" />
+    <button onclick="adicionar()">Adicionar</button><br />
+    <button onclick="primeira()">Primeira viagem</button><br />
+    <button onclick="terceira()">Terceira viagem</button><br />
+    <button onclick="ultima()">Última viagem</button><br />
+    <div id="div_mensagem"></div>
+  </body>
+</html>
+<script>
+  let lista = [];
+  function adicionar() {
+    let destino = ipt_destino.value;
+    lista.push(destino);
+    console.log(lista);
+  }
+  function primeira() {
+    if (lista[0]) {
+      div_mensagem.innerHTML = `primeiro: ${lista[0]}`;
+    } else {
+      div_mensagem.innerHTML = `Ainda não viajou`;
+    }
+  }
+  function terceira() {
+    if (lista[2]) {
+      div_mensagem.innerHTML = `Terceira viagem ${lista[2]}`;
+    } else {
+      div_mensagem.innerHTML = `Ainda não fez a terceira viagem`;
+    }
+  }
+  function ultima() {
+    if (lista[lista.length - 1]) {
+      div_mensagem.innerHTML = `Ultima viagem ${lista[lista.length - 1]}`;
+    } else {
+      div_mensagem.innerHTML = `Ainda não viajou`;
+    }
+  }
+</script>
