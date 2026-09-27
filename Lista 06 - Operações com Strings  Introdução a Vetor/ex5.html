@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Substituidor de Caracteres</h1>
+
+    Informe sua senha:
+    <input type="text" id="ipt_senha" oninput="fortalecerSenha()" />
+    <div id="div_mensagem"></div>
+  </body>
+</html>
+<script>
+  function fortalecerSenha() {
+    let senha = ipt_senha.value;
+
+    senha = senha.replaceAll("a", "@");
+    senha = senha.replaceAll("A", "@");
+
+    senha = senha.replaceAll("e", "3");
+    senha = senha.replaceAll("E", "3");
+
+    div_mensagem.innerHTML = senha;
+  }
+</script>

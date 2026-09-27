@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Observador de Índices</h1>
+
+    Informe uma frase:
+    <input type="text" id="ipt_frase" /><br>
+    informa o numero de qual letra você deseja ver:
+    <input type="text" id="ipt_numero" oninput="verletra()" /><br>
+    <div id="div_mensagem"></div>
+  </body>
+</html>
+<script>
+  function verletra() {
+    let frase = ipt_frase.value;
+    let numero = Number(ipt_numero.value);
+
+    div_mensagem.innerHTML = `
+           A primeira letra é: ${frase[0]} <br>
+           A ${numero}ª letra é: ${frase[numero -1]} <br>
+           A última letra é: ${frase[frase.length -1]}
+            `;
+  }
+</script>

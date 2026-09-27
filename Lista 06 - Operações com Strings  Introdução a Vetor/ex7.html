@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Senha Forte ou Fraca</h1>
+
+    Informe sua senha:
+    <input type="text" id="ipt_senha" oninput="verificar()" />
+    <div id="div_mensagem"></div>
+  </body>
+</html>
+<script>
+  function verificar() {
+    let senha = ipt_senha.value;
+    let pontos = 0;
+    if (senha != senha.toUpperCase()) {
+      pontos = pontos + 1;
+    }
+    if (senha != senha.toLowerCase()) {
+      pontos = pontos + 1;
+    }
+    if (senha != senha.length >= 8) {
+      pontos = pontos + 1;
+    }
+  }
+</script>
