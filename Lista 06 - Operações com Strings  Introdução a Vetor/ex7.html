@@ -16,15 +16,20 @@
 <script>
   function verificar() {
     let senha = ipt_senha.value;
-    let pontos = 0;
-    if (senha != senha.toUpperCase()) {
-      pontos = pontos + 1;
-    }
-    if (senha != senha.toLowerCase()) {
-      pontos = pontos + 1;
-    }
-    if (senha != senha.length >= 8) {
-      pontos = pontos + 1;
+    let criterios = 0;
+
+    if (senha.length >= 8) criterios++;
+    if (senha.toLowerCase() != senha) criterios++;
+    if (senha.toUpperCase() != senha) criterios++;
+
+    if (criterios == 3) {
+      div_mensagem.innerHTML = `Senha Forte ${criterios}`;
+    } else if (criterios == 2) {
+      div_mensagem.innerHTML = `Senha Média ${criterios}`;
+    } else if (criterios == 1) {
+      div_mensagem.innerHTML = `Senha Fraca ${criterios}`;
+    } else {
+      div_mensagem.innerHTML = `Senha Insegura ${criterios}`;
     }
   }
 </script>
